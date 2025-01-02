@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+    <div class="analysis-container">
+        <div class="analysis-content">
+            <div class="stats-section">
+                <div class="stat-item">
+                    <label>Positive Sentiments: {{ data.positive }}</label>
+                </div>
+                <div class="stat-item">
+                    <label>Negative Sentiments: {{ data.negative }}</label>
+                </div>
+            </div>
+            <div class="input-section">
+                <form method="post" class="sentiment-form">
+                    <textarea name="text" placeholder="Enter your text here..."></textarea>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+            <div class="reviews-section">
+                {% for review in data.reviews %}
+                <div class="review-item">
+                    <p>{{ review }}</p>
+                    <hr />
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
